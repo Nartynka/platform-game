@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level 1 - Dino/Spikes/spikes.png" type="Texture" id=1]
+[ext_resource path="res://Level 1 - Dino/Spikes/Spike.gd" type="Script" id=2]
+
+[node name="TripleSpikes" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 5, 5 )
+polygon = PoolVector2Array( -4.2, 3, -3.6, 1.8, -3, 0.6, -2.4, 0, -1.8, -1.2, -1.2, -2.4, -0.6, -3, 0.6, -3, 1.2, -2.4, 1.8, -1.2, 2.4, 0, 3, 0.6, 3.6, 1.8, 4.2, 3, 4.8, 4.2, 5.4, 3, 6, 1.8, 6.60046, 0.599535, 7.2, 0, 7.8, -1.2, 8.4, -2.4, 9, -3, 10.2, -3, 10.8, -2.4, 11.4, -1.2, 12.0079, 0.0158925, 12.6, 0.6, 13.2, 1.8, 13.8, 3, 14.4, 4.2, 14.4, 4.8, -4.8, 4.8, -14.4, 4.8, -14.4, 4.2, -13.8, 3, -13.2, 1.8, -12.6, 0.6, -12.0137, 0.0273931, -11.4, -1.2, -10.8, -2.4, -10.2, -3, -9, -3, -8.4, -2.4, -7.8, -1.2, -7.2, 0, -6.6, 0.6, -6, 1.8, -5.4, 3, -4.8, 4.2 )
+
+[node name="Spike" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Spike2" type="Sprite" parent="."]
+position = Vector2( 48, 0 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Spike3" type="Sprite" parent="."]
+position = Vector2( -48, 0 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

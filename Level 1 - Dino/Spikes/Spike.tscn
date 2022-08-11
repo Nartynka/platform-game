@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/spikes.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+var dmg = 1
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+		PlayerStats.health -= dmg
+		body.velocity.y = body.jump_speed
+"
+
+[node name="Spike" type="Area2D"]
+script = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 5, 5 )
+polygon = PoolVector2Array( -4.2, 3, -3.6, 1.8, -3, 0.6, -2.4, 0, -1.8, -1.2, -1.2, -2.4, -0.6, -3, 0.6, -3, 1.2, -2.4, 1.8, -1.2, 2.4, 0, 3, 0.6, 3.6, 1.8, 4.2, 3, 4.8, 4.4, 4.8, 4.8, -4.8, 4.8, -4.8, 4.2 )
+
+[node name="Spike" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

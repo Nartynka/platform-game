@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UI/Minecraft.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Win.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 82
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 66
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="Win" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.494118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 287.0
+margin_top = 215.0
+margin_right = 737.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 1 )
+text = "BRAWO!
+WYGRALES"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 231.0
+margin_top = 413.0
+margin_right = 802.0
+margin_bottom = 486.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Zagraj ponownie!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
